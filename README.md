@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
+## What is
+
+With this Angular project anyone can create easily its own Online Nerd-Style Curriculum. The configuration is pretty straightforward and almost everything can be customizable via a json file located in /assets/ folder.
+
+## Demo
+
+Demo in action [Here](https://sergiomeloni.azurewebsites.net) :-)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
