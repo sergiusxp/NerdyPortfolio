@@ -1,0 +1,13 @@
+<section>
+  <div class="ctitle" innerHTML="{{ section.title + ' {' }}"></div>
+  <div class="ccontent" *ngIf="!section.subsections">
+    <span class="innerText" innerHTML="{{ section.text }}"></span>
+  </div>
+  <div *ngIf="section.subsections">
+    <ng-container *ngFor="let ss of section.subsections">
+      <portfolio-comment *ngIf="ss.type === 'comment'" [comments]="ss.comments" class="smaller"></portfolio-comment>
+      <portfolio-section *ngIf="ss.type == 'section'" [section]="ss" class="smaller"></portfolio-section>
+    </ng-container>
+  </div>
+  <div class="ctitle">{{ '}' }}</div>
+</section>

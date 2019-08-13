@@ -1,0 +1,44 @@
+<ng-container *ngIf="settings.dynamicContact">
+  <form class="contacts" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <ul>
+      <li class="form-element">
+        <label for="name">Name *</label>
+        <input type="text" name="name" id="name" required [(ngModel)]="model.name">
+        <span>Your name</span>
+      </li>
+      <li class="form-element">
+        <label for="surname">Surname *</label>
+        <input type="text" name="surname" id="surname" required [(ngModel)]="model.surname">
+        <span>Your surname</span>
+      </li>
+      <li class="form-element">
+        <label for="email">E-mail address *</label>
+        <input type="email" name="email" id="email" required [(ngModel)]="model.email">
+      </li>
+      <li class="form-element">
+        <label for="choice">Contact Type *</label>
+        <select name="choice" id="choice" [(ngModel)]="model.choice">
+          <option value="general" selected>General question</option>
+          <option value="work">Work</option>
+          <option value="comment">Feedbacks, comments or critics</option>
+        </select>
+      </li>
+      <li class="form-element">
+        <label for="comment">Comments *</label>
+        <textarea autosize name="comment" id="comment" [(ngModel)]="model.comment"></textarea>
+        <span>Feel free to leave a comment or a critic :-)</span>
+      </li>
+      <li class="nob">
+        <input type="submit" value="Send This">
+      </li>
+      <li *ngIf="errorMessage">
+        <span class="submitted" *ngIf="errorMessage === ''">Request submitted :-)</span>
+        <span class="submitted" *ngIf="errorMessage !== ''">Request not submitted... Some errors occurred: <i>{{ errorMessage }}</i> :-(</span>
+      </li>
+    </ul>
+  </form>
+</ng-container>
+<ng-container *ngIf="!settings.dynamicContact">
+  <h3>Contact Page</h3>
+  <p>Hi, thanks for your interest. If you want to contact me, please feel free to <a href="mailto:{{ settings.mailAddressForStaticContactPage }}">send me an e-mail :-)</a></p>
+</ng-container>

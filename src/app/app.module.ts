@@ -3,16 +3,43 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SectionComponent } from './components/section/section.component';
+import { MainclassComponent } from './components/mainclass/mainclass.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { ContactComponent } from './components/custom/contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactService } from './components/custom/services/contact.service';
+import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClientModule } from '@angular/common/http';
+import { WhoAmIComponent } from './components/custom/who-am-i/who-am-i.component';
+import { ProjectsComponent } from './components/custom/projects/projects.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { CommonModule } from '@angular/common';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SectionComponent,
+    MainclassComponent,
+    CommentComponent,
+    ContactComponent,
+    WhoAmIComponent,
+    ProjectsComponent,
+    SafeHtmlPipe,
+    NotFoundComponent 
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule
   ],
-  providers: [],
+  exports: [SafeHtmlPipe],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,8 @@
+<div class="content">
+  <div class="title"><span class="modifier">public class</span> {{ settings.author }} {{ '{' }}</div>
+  <ng-container *ngFor="let s of portfolio.sections">
+    <portfolio-comment *ngIf="s.type == 'comment'" [comments]="s.comments"></portfolio-comment>
+    <portfolio-section *ngIf="s.type == 'section'" [section]="s"></portfolio-section>
+  </ng-container>
+  <div class="title">{{ '}' }}</div>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Link } from './models/link';
+import * as myJson from '../assets/portfolio.json';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'online-portfolio';
+
+  public links;
+
+  constructor() {
+    this.links = myJson['default']['links'] as Link[];
+  }
+  ngOnInit() {
+  }
+
 }
