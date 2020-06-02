@@ -8,7 +8,7 @@ With this Angular project anyone can create easily its own Online Nerd-Style Cur
 
 ## Demo
 
-Demo in action [Here](https://sergiomeloni.azurewebsites.net) :-)
+Demo in action [Here](https://resume.azurehead.com) :-)
 
 ## Development server
 
